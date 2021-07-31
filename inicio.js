@@ -8,15 +8,15 @@ const currentDay = new Date().getDate();
 let dateNow;
 
 if(currentMonth < 10){
-    dateNow = `${currentYear}-0${currentMonth}-${currentDay+1}`;
+    dateNow = `${currentYear}-0${currentMonth}-${currentDay}`;
 }else{
 dateNow = `${currentYear}-${currentMonth}-${currentDay+1}`;
 }
-
+/*  Calendar min day for today   */
 window.addEventListener('load', ()=>{
 document.getElementById('dateInput').setAttribute('min',dateNow);
 });
-
+/*  Get user date target */
 document.getElementById('startCount').addEventListener('click', function(){
     dateTarget = document.getElementById('dateInput').value;
     dateVerify(dateTarget);
@@ -26,10 +26,13 @@ function dateVerify(date){
     let dateArray;
     if(date >= dateNow){
         dateArray = date.split("-");
-        year = dateArray[2];
+        year = dateArray[0];
         month = dateArray[1];
-        day = dateArray[0];
-        location.assign('./contador.html');
+        day = dateArray[2];
+        localStorage.setItem('year',year);
+        localStorage.setItem('month',month);
+        localStorage.setItem('day',day);
+        location.replace('./contador.html');
         
     }else{
         alert("Informe uma data futura")

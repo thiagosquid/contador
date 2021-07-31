@@ -15,10 +15,12 @@ section{
 
 h1{
     color: #21EB00;
+    margin: 10px;
 }
 
 h3{
     color: #595c56;
+    margin: 10px;
 }
 
 #dateInput{
@@ -80,7 +82,7 @@ h3{
 #remaining{
     font-size: 5em;
     color: #5b5e58;
-    margin: 100px auto 100px auto;
+    margin: 80px auto 80px auto;
 }
 
 #counter{
@@ -91,6 +93,7 @@ h3{
     width: 20%;
     height: 100px;
     color: white;
+    font-size: 4.5em;
     display: inline-block;
 }
 .txTime{
