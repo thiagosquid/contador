@@ -4,13 +4,13 @@ let month;
 let year;
 const currentYear = new Date().getFullYear();
 const currentMonth = new Date().getMonth()+1;
-const currentDay = new Date().getDate();
+const currentDay = new Date().getDate()+1;
 let dateNow;
 
 if(currentMonth < 10){
     dateNow = `${currentYear}-0${currentMonth}-${currentDay}`;
 }else{
-dateNow = `${currentYear}-${currentMonth}-${currentDay+1}`;
+    dateNow = `${currentYear}-${currentMonth}-${currentDay}`;
 }
 /*  Calendar min day for today   */
 window.addEventListener('load', ()=>{
